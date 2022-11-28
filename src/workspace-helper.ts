@@ -15,6 +15,7 @@ import { inject, injectable } from 'inversify';
 import { Configuration } from './configuration';
 import { K8sHelper } from './k8s-helper';
 import { RegexpHelper } from './regexp-helper';
+import WorkspaceClient from '@eclipse-che/workspace-client';
 
 @injectable()
 export class WorkspaceHelper {
@@ -66,6 +67,11 @@ export class WorkspaceHelper {
 
     // pause
     await this.pause(timeoutMS);
+  }
+
+  async doRequest(): Promise<void> {
+    const restApiClient = WorkspaceClient.getRestApi({ baseUrl: this.configuration.cheUrl() + '/api' });
+    await restApiClient.getFactoryResolver('');
   }
 
   async start(): Promise<void> {

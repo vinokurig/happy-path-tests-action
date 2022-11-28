@@ -9,6 +9,7 @@
     "@actions/core": "^1.2.6",
     "@actions/tool-cache": "^1.6.1",
     "@kubernetes/client-node": "^0.13.2",
+    "@eclipse-che/workspace-client": "0.0.1-1663851810",
     "axios": "^0.21.1",
     "execa": "^5.0.0",
     "fs-extra": "^9.0.1",
@@ -60,14 +61,6 @@
     "collectCoverageFrom": [
       "src/**/*.ts"
     ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100,
-        "statements": 100
-      }
-    },
     "coverageDirectory": "./coverage",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"

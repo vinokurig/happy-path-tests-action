@@ -37,10 +37,13 @@ export class LaunchHappyPath {
     core.info('Images [pull]...');
     await this.imagesHelper.pull();
 
-    core.info('Workspace [start]...');
-    await this.workspaceHelper.start();
+    core.info('Workspace [request]...');
+    await this.workspaceHelper.doRequest();
 
-    core.info('Happy Path [start]...');
-    await this.happyPathHelper.start();
+    // core.info('Workspace [start]...');
+    // await this.workspaceHelper.start();
+    //
+    // core.info('Happy Path [start]...');
+    // await this.happyPathHelper.start();
   }
 }
