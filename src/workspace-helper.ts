@@ -70,7 +70,7 @@ export class WorkspaceHelper {
   }
 
   async doRequest(): Promise<void> {
-    const restApiClient = WorkspaceClient.getRestApi({ baseUrl: this.configuration.cheUrl() + '/api' });
+    const restApiClient = WorkspaceClient.getRestApi({ baseUrl: this.configuration.cheUrl() });
     await restApiClient.getFactoryResolver('https://github.com/vinokurig/test.git');
   }
 
